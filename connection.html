@@ -54,13 +54,8 @@
                             <h3>ZFP Compression</h3>
                             <p>For 3DAVis’ hybrid approach, 3D volume data cubes consisting of float arrays have to be sent to the client for rendering. This data tends to be quite large in size and therefore, needs to be considerably compressed before transfer. ZFP compression library is an open-source software typically used for 
                                 compressing numerical arrays for high-speed random access. CARTA makes use of ZFP compression on its 2D volume data cubes and was proven to be very efficient in terms of compression size ratio and transfer speedup. 3DAVis incorporates the same library on its 3D data. </p>
-                            <ul>
-                                <li>Faucibus orci lobortis ac adipiscing integer.</li>
-                                <li>Col accumsan arcu mi aliquet placerat.</li>
-                                <li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-                                <li>Blandit massa non blandit tempor interdum.</li>
-                                <li>Lacinia mattis arcu nascetur lobortis.</li>
-                            </ul>
+                            <p>In 3DAVis, the implementation of the ZFP library is adapted to deal with 3D volume data. As this project is a proof of concept, the maximum volume data to be compressed per tile is set to be <i>64*64*64</i> floats, which is equivalent to 1 Megabyte.</p>
+                            <p>On the client side, ZFP library is imported, and a typical decompression class is constructed using C language. Subsequently, to make the system JavaScript-comprehensible, a pre.ts, post.ts and typyings.d.ts declaration TypeScript files are necessary to build-in the decompression class. These typescripts files along with the ZFP decompression method all compiled into a JavaScript file and a ZFP wrapper WebAsssembly file using Emscripten, a complete compiler toolchain focusing on speed and size using LLVM (Low Level Virtual Machine)</p>
                         </section>
 
                     </div>
@@ -69,24 +64,25 @@
                         <!-- Sidebar -->
                         <section id="sidebar">
                             <section>
-                                <h3>Magna Feugiat</h3>
-                                <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed
-                                    blandit..
+                                <h3>μWebSocket</h3>
+                                <p>uWebSockets is a tool in the Realtime Backend / API category of a tech stack.
+                                    uWebSockets is an open source tool with 13.2K GitHub stars and 1.4K GitHub forks. Click on the button below to access its open-source repository.
                                 </p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="#" class="button">Learn More</a></li>
+                                        <li><a href="https://github.com/uNetworking/uWebSockets" class="button">Learn More</a></li>
                                     </ul>
                                 </footer>
                             </section>
                             <hr />
                             <section>
-                                <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-                                <h3>Amet Lorem Tempus</h3>
-                                <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+                                <h3>ZPF Library</h3>
+                                <p>ZFP is an open-source C++ compression library format for representing multidimensional floating point and integer arrays. The library provides classes which can support high throughput read and write random access to array elements. In addition to the traditional serial compression, ZFP also supports parallel compression of whole arrays using OpenMP and CUDA. 
+                                    Click on the button below to access its open-source repository.
+                                </p>
                                 <footer>
                                     <ul class="actions">
-                                        <li><a href="#" class="button">Learn More</a></li>
+                                        <li><a href="https://github.com/LLNL/zfp" class="button">Learn More</a></li>
                                     </ul>
                                 </footer>
                             </section>
