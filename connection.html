@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>3DAVis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <nav id="nav">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="server.html">Server</a></li>
+                    <li><a href="connection.html">Connection</a></li>
+                    <li><a href="client.html">Client</a></li>
+                    <li><a href="teammembers.html">Team Members</a></li>
+                    <li><a href="downloads.html">Downloads</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <div id="main" class="wrapper style1">
+            <div class="container">
+                <header class="major">
+                    <h2>Server-Client Connection</h2>
+                    <p>The Application Programming Interface (API) of the 3DAVis System</p>
+                </header>
+                <div class="row gtr-150">
+                    <div class="col-8 col-12-medium">
+
+                        <!-- Content -->
+                        <section id="content">
+                            <h3>WebSocket Connection</h3>
+                            <p>WebSocket is used for connection and communication between the server and the client. WebSocket is a computer communication protocol occurring on a TCP (Transmission Control Protocol) connection over the network layer. 
+                                uWebSocket is the C++ library used on the server side whereas the WebSocket API JavaScript object is used on the client side. </p>
+                            <p>The uWebSocket C++ library is imported in the main server class to create and listen for a client connection. For development and testing convenience, the server currently calls on communication API (Application Programming Interface) which listens for any connection on port number 9000 on local host.
+                                When the connection is set up, the API requires a group of initializing callbacks to be registered in order to have the same pattern as HTTP (HyperText Transfer Protocol). These settings and handlers have to be manipulated according to the context of the project. For instance, settings such as compression 
+                                and maximum message payload size are set to <i>DEDICATED_COMPRESSOR_256KB</i> and <i>256*1024*1024</i> bits respectively. These are the values currently proven to be most efficient for CARTA’s server-client communication and they are also chosen for 3DAVis as the purpose of these settings are similar.
+                                On the other hand, handler methods are overridden in the main server class to perform the expected functions of the server. </p>
+                                
+                            <h3>ZFP Compression</h3>
+                            <p>For 3DAVis’ hybrid approach, 3D volume data cubes consisting of float arrays have to be sent to the client for rendering. This data tends to be quite large in size and therefore, needs to be considerably compressed before transfer. ZFP compression library is an open-source software typically used for 
+                                compressing numerical arrays for high-speed random access. CARTA makes use of ZFP compression on its 2D volume data cubes and was proven to be very efficient in terms of compression size ratio and transfer speedup. 3DAVis incorporates the same library on its 3D data. </p>
+                            <ul>
+                                <li>Faucibus orci lobortis ac adipiscing integer.</li>
+                                <li>Col accumsan arcu mi aliquet placerat.</li>
+                                <li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
+                                <li>Blandit massa non blandit tempor interdum.</li>
+                                <li>Lacinia mattis arcu nascetur lobortis.</li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-4 col-12-medium">
+
+                        <!-- Sidebar -->
+                        <section id="sidebar">
+                            <section>
+                                <h3>Magna Feugiat</h3>
+                                <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed
+                                    blandit..
+                                </p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="#" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                            <hr />
+                            <section>
+                                <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                                <h3>Amet Lorem Tempus</h3>
+                                <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
+                                <footer>
+                                    <ul class="actions">
+                                        <li><a href="#" class="button">Learn More</a></li>
+                                    </ul>
+                                </footer>
+                            </section>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
