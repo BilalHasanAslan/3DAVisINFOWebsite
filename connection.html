@@ -64,6 +64,7 @@
                         </section>
 
                     </div>
+                    
                     <div class="col-4 col-12-medium">
 
                         <!-- Sidebar -->
@@ -94,6 +95,27 @@
 
                     </div>
                 </div>
+                <h3><b>Results</b></h3>
+                    <p>The transfer rate using uncompressed data as compared to compressed data is investigated to show the difference in efficiency and speed of using ZFP compression. On the same note, the factor of compression on several tile sizes is tested and analyzed. </p>
+
+                        <table width="100%">
+                            <tr>
+                                <td width="50%">
+                                    <img src="images/connectionpics/compression.png" width="575" height="320" alt="" />
+                                    As shown by the blue and gray lines, the average time taken to send through one
+                                    tile, as small as containing 0.5 MB of floating points data, is at least 200 ms 
+                                    and increases linearly with the tile size. this is because the values of the data 
+                                    cube have to be physically loaded in and stored in a JSON object for transfer. On 
+                                    the contrary, both compressed random data and real data should a considerable speed up 
+                                    in transfer rate. For instance, a tile, as big as 3 MB can be processed under 100 ms. On 
+                                    a performance scale, we are dealing with a system which is 20 times faster when considering 
+                                    1 MB tiles.</td>
+
+                                <td width="50%">
+                                    <img src="images/connectionpics/compressed.png" width="575" height="320" alt="" />
+                                    The use of ZFP library on 3D volume data has significantly reduced the size of the data through compression, hence allowing faster transfer. ZPF compression demonstrated over 90% size reduction on random data, and even more effective results on real astronomical data due to grouping of the empty spaces and similar regions in the volume cube.</td>
+                            </tr>
+                        </div>
             </div>
         </div>
 
