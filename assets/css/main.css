@@ -3852,3 +3852,12 @@ body.is-touch #banner {
 .team-heading {
     text-align: center;
 }
+
+.team-flex-card>img {
+    width: 200px;
+    height: 200px;
+}
+
+.team-flex-outro {
+    text-align: center;
+}
