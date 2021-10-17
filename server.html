@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>3DAVis</title>
+    <title>No Sidebar - Landed by HTML5 UP</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -19,9 +19,7 @@
 
         <!-- Header -->
         <header id="header">
-            <h1 id="logo">
-                <a href="main.html"><img src="images/logowhite.png" /></a>
-            </h1>
+            <h1 id="logo"><a href="main.html">3DAVis</a></h1>
             <nav id="nav">
                 <ul>
                     <li><a href="main.html">Home</a></li>
@@ -38,63 +36,43 @@
         <div id="main" class="wrapper style1">
             <div class="container">
                 <header class="major">
-                    <h2>3DAVis</h2>
-                    <p>3 dimensional Astronomy Visualisation</p>
+                    <h2>Server</h2>
+                    <p>The back-end portion of the 3DAVis system</p>
                 </header>
-                <div class="row gtr-150">
-                    <div class="col-8 col-12-medium">
 
-                        <!-- Content -->
-                        <section id="content">
-                            <a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-                            <h3>Dolore Amet Consequat</h3>
-                            <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada
-                                quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-                            <p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas
-                                turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique.</p>
-                            <h3>Sed Magna Ornare</h3>
-                            <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet
-                                iaculis porttitor, risus nisi rutrum metus.</p>
-                            <ul>
-                                <li>Faucibus orci lobortis ac adipiscing integer.</li>
-                                <li>Col accumsan arcu mi aliquet placerat.</li>
-                                <li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-                                <li>Blandit massa non blandit tempor interdum.</li>
-                                <li>Lacinia mattis arcu nascetur lobortis.</li>
-                            </ul>
-                        </section>
+                <!-- Content -->
+                <section id="content">
+                    <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+                    <h3>Overview</h3>
+                    <p> Astronomical data are huge in size. When working with such large data sets, it is crucial that memory management is prioritized for scalability as well as obtaining fast process speed for better server response time. For this reasons,
+                        This is why C++ was chosen to implement the server; it provides good memory management and is computationally efficient. C++ is also widely utilized in computer graphics applications, scientific or, otherwise and also web applications’
+                        servers that require fast response times. One of our primary motives for this project is to build a proof of concept for CARTA which is also built in C++ language.
 
-                    </div>
-                    <div class="col-4 col-12-medium">
+                        <p> The Server used VTK (Visualisation toolkit), which is a C++ library, for volumetric rendering high resolution data on the server side and encoding it to JPEG (Joint Photographic Experts Group) picture format that will be sent to
+                            client side. This library was chosen because it is widely used in scientific volume rendering.</p>
 
-                        <!-- Sidebar -->
-                        <section id="sidebar">
-                            <section>
-                                <h3>Magna Feugiat</h3>
-                                <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper commodo suscipit amet sed nibh. Proin a ullamcorper sed
-                                    blandit..
-                                </p>
-                                <footer>
-                                    <ul class="actions">
-                                        <li><a href="#" class="button">Learn More</a></li>
-                                    </ul>
-                                </footer>
-                            </section>
-                            <hr />
-                            <section>
-                                <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-                                <h3>Amet Lorem Tempus</h3>
-                                <p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
-                                <footer>
-                                    <ul class="actions">
-                                        <li><a href="#" class="button">Learn More</a></li>
-                                    </ul>
-                                </footer>
-                            </section>
-                        </section>
+                        <h3>Pre-Processing</h3>
+                        <p>
+                            Disk reading is a slow process in computers. Reducing this bottle- neck created from disk reading will increase the speed of the server dramatically. FITS file format only provides sequential reading from disk while HDF5 file format provides parallel
+                            reading and chunking features. Reading data through HDF5 file format will increase servers’ response speed resulting in a more efficient astronomical rendering system.
+                            <p>
+                                Mipmaps are different levels of low-resolution cubes of the data. Another way to speed up server performance is by pre-processing these mipmaps before the server and client renders it. HDF5 file format can store different datasets in its file format,
+                                allowing it to store pre-processed mipmap datasets. These mipmap datasets are stored in chunks, each of which contains one cubelet. These cubelets dimension sizes are 64x64x64 which makes them 1MB in size. This could be
+                                easily changed in the code if different chunk sizes are required.
+                                <p>
+                                    Since most of the astronomical data is stored in FITS format, a Converter is needed to convert FITS files to the desired HDF5 file format. Diagram below illustrates the process of the converter which converts a FITS file format into a HDF5 file format.
+                                    <p>
 
-                    </div>
-                </div>
+                                        <a href="#" class="aln-middle"><img src="images/serverpics/Converter.png" alt="" /></a>
+                                        <h3>Disk Reading</h3>
+                                        <p>
+
+
+
+
+
+                </section>
+
             </div>
         </div>
 
