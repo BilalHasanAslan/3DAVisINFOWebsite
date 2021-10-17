@@ -45,12 +45,11 @@
                     <a href="#" class="image fit"><img src="images/client-banner.png" alt="" /></a>
                     <h3>Overview</h3>
                     <p>
-                        The primary purpose of the client/frontend system is to visualise the data received form the server in the forms of image and volume data and to handle and process user interaction with the data. It was constructed using Vue.js, a frontend JavaScript
-                        framework for the construction of reactive client-side web applications.
+                        The primary purpose of the client/frontend system is to visualise the data received form the server in the forms of image and volume data and to handle and process user interaction with the data.
                     </p>
                     <p>
-                        The client Subsystem was constructed using the Vue.js javascript application framework and allows for easy creation of modular components. Additional packages for functionality can easily be added with a package manager like NPM, some of the packages
-                        that were used are vtk.js which is used for client-side data visualisation and is the JavaScript extension of VTK library that is implemented on the server-side system. The Bootstrap CSS package was used to improve the overall
+                        The client Subsystem was constructed using the <a href="https://v3.vuejs.org/">Vue.js</a> javascript application framework and allows for easy creation of modular components. Additional packages for functionality can easily be added with a package manager like <a href="https://www.npmjs.com/">NPM</a>, some of the packages
+                        that were used are <a href="https://kitware.github.io/vtk-js/index.html">vtk.js</a> which is used for client-side data visualisation and is the JavaScript extension of VTK library that is implemented on the server-side system. The <a href="https://getbootstrap.com/">Bootstrap</a> CSS package was used to improve the overall
                         aesthetic and user experience compared to default HTML elements. To facilitate the connection between the client and the server JavaScript WebSocket are used to send and receive data without having to rely on singular HTTP requests
                         and responses, allowing the client to make a single request and receive multiple responses.
                     </p>
@@ -58,7 +57,7 @@
                         The client will primarily receive images of fixed size in the implementation this size is 1080 pixels and 720 pixels and or one to two data cubes of a fixed which is 64 by 64 by 64 data points per axis. These dimensions limit the amount of data that the
                         user will receive, the dimensions can be increased of decreased and limit the amount of data the client computer will have to process during its use.
                     </p>
-                    <p>
+                    <!-- <p>
                         The key questions for this section pertain to the design and implementation of visualisation software within the context of astronomy, these were:
                     </p>
                     <ol>
@@ -67,7 +66,7 @@
                         <li>What is the limit for the size of data cubes that are rendered by the client system before impacting usability?</li>
                         <li>How can the client and server approaches be combined to facilitate high-resolution data rendering over a network while maintaining usability?</li>
                         <li>How does the hybrid model approach scale in terms of rendering time, transfer latency, and time from user interaction and feedback over increasingly larger data sets?</li>
-                    </ol>
+                    </ol> -->
 
                     <h3>User Interface</h3>
                     <p>
