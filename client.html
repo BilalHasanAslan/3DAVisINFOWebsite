@@ -66,15 +66,39 @@
 									These dimensions limit the amount of data that the user will receive, the dimensions can be increased of decreased
 									and limit the amount of data the client computer will have to process during its use.
 								</p>
-								<h3>Sed Magna Ornare</h3>
-								<p></p>
-								<ul>
-									<li>Faucibus orci lobortis ac adipiscing integer.</li>
-									<li>Col accumsan arcu mi aliquet placerat.</li>
-									<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-									<li>Blandit massa non blandit tempor interdum.</li>
-									<li>Lacinia mattis arcu nascetur lobortis.</li>
-								</ul>
+								<p>
+									The key questions for this section pertain to the design and implementation of visualisation software within
+									the context of astronomy, these were:
+								</p>
+								<ol>
+									<li>How can the computational overhead of rendering large amounts of data be offloaded from the client
+										system?</li>
+									<li>What is the limit for the size of data cubes that are rendered by the client system before 
+										impacting usability?</li>
+									<li>How can the client and server approaches be combined to facilitate high-resolution data rendering 
+										over a network while maintaining usability?</li>
+									<li>How does the hybrid model approach scale in terms of rendering time, transfer latency, and time 
+										from user interaction and feedback over increasingly larger data sets?</li>
+								</ol>
+								
+								<h3>User Interface</h3>
+								<p>
+									The user Interface of the client system allows the user it access the functionality and interact with the data
+									located within the server.
+									It consists out of elements that allow the user to access the data on the server in the form of files and data cubes, 
+									as well as the high resolution visualisations produced by the server. 
+									Mechanisms to manipulate the rendering produced by the client such as changing the colour function so that the 
+									volume rendering displays differently or to manipulate it position relative to the camera.
+								</p>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-6"><span class="image fit"><figure><img src="images/1-initial-screen.png"/><figcaption>The user interface of the client system before the user has selected a file with a drop down selection element to allow the user to view and select a file as well as the the other function the user can perform on the data cube, such as crop the data cube, reset the page and request a high resolution image if desired. The rest of the screen is blank.</figcaption></figure></span></div>
+										<div class="col-6"><span class="image fit"><figure><img src="images/2-ctfun-2.png"/><figcaption>The volume rendering produced by the browser on the client computer. The rendering is interactive and the user can manipulate the volume data by zooming in and out, rotating around x, y, z axes and manipulating the cropping area by clicking and dragging the vertices and planes. How the data is visualised can be manipulate using the widget at the top right corner of the screen.</figcaption></figure></span></div>
+										<div class="col-6"><span class="image fit"><figure><img src="images/image.png"/><figcaption>The high resolution visualisation produced by the server of the full sized data cube also located on the server. The image is displayed when the user stops interacting with the window.</figcaption></figure></span></div>
+										<div class="col-6"><span class="image fit"><figure><img src="images/3-crop-3.png"/><figcaption>After the cropping area has bee sufficiently manipulated and the crop button has been selected, the server sends data cubes of the selected area at a higher resolution level. This is a view of the data from but at a higher resolution level than before the crop and more detail of the structure can be seen.</figcaption></figure></span></div>
+									</div>
+								</div>
+								<h3>Results</h3>
 							</section>
 
 					</div>
