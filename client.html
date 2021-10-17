@@ -99,6 +99,166 @@
 									</div>
 								</div>
 								<h3>Results</h3>
+								<h4>Rendering</h4>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-6">
+											<p>
+												The rendering time for data cubes on the client system increases linearly with the amount of data points,
+												where as the data cube dimensions increase so does the time required to render it.
+												This is due to no being able to discard any region of the data while rendering, 
+												each data cube must be processed and rendered and therefore the execution time for the rendering of the 
+												data will have an O(n) relationship with the rendering time.
+												The largest size the data cube can handle is determined by the individual client computer's specifications
+												however limiting the current dimensions of the data cubes to 64 by 64 by 64 ensures the client computer
+												will be able to render data cubes in a timely manner by minimising computational overhead for the client system.
+												A data cube with the dimensions of 64 render on average under half a second while maintaining a high 
+												enough resolution to depict significant structures within the volume data.
+												Whereas data cubes with dimensions of 128 will have a higher resolution of the data and depict the structures 
+												with more accuracy the number of data points increased exponentially causing the rendering on a single 128 by 
+												128 by 128 to be 1.6 seconds on average, three times the duration of the 64 by 64 by 64 cube.
+												This time could be decreased with more computational resources but it cannot be assumed the the user would 
+												have access to such resources.
+												A 32 by 32 by 32 data cube would take less time to render however it will not have high enough resolution
+												to represent the structures within the data.
+
+												A data cube with 64 by 64 by 64 dimensions requires on average half a second to render, 
+												however, the time for combining the cubes if there is more than one must be considered and added to the rendering
+												in order to determine how long the user must wait before interaction can begin.
+											</p>
+										</div>
+										<div class="col-6"><span class="image fit"><figure><img src="images/client-results/render-time.png"/><figcaption>The relationship between the size of the cube being rendered on the client and the time taken by VTK.js to render it.</figcaption></figure></span></div>
+									</div>
+								</div>
+								<table>
+									<thead>
+									  <tr>
+										<th>Number of data point</th>
+										<th>Cube dimensions</th>
+										<th>Average Time (ms)</th>
+										<th>Average time (s)</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr>
+										<td>262144</td>
+										<td>64x64x64</td>
+										<td>468</td>
+										<td>0.468</td>
+									  </tr>
+									  <tr>
+										<td>2097152</td>
+										<td>128x128x128</td>
+										<td>1672</td>
+										<td>1.672</td>
+									  </tr>
+									  <tr>
+										<td>16777216</td>
+										<td>256x256x256</td>
+										<td>11698</td>
+										<td>11.6976</td>
+									  </tr>
+									  <tr>
+										<td>134217728</td>
+										<td>512x512x512</td>
+										<td>89762</td>
+										<td>89.7618</td>
+									  </tr>
+									</tbody>
+								</table>
+								<h4>Data cube combination - Cube Size</h4>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-6">
+											<p>
+												When combining data cubes of increasing sizes
+												the time required to combine data cubes increases linearly with increased number od data points within the cube.
+												It has the same effect of the time as rendering the larger data cubes where the time increases in a linear 
+												relationship with the number of data points.
+											</p>
+										</div>
+										<div class="col-6"><span class="image fit"><figure><img src="images/client-results/cube-combo-size.png"/><figcaption>The relationship between the size of the cube being combined on the client and the time required for them to be combined.</figcaption></figure></span></div>
+									</div>
+								</div>
+								<table>
+									<thead>
+									  <tr>
+										<th>Number of cubes</th>
+										<th>Dimensions of cubes</th>
+										<th>Average Time (ms)</th>
+										<th>Average time (s)</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr>
+										<td>2</td>
+										<td>32x32x32</td>
+										<td>780.7</td>
+										<td>0.7807</td>
+									  </tr>
+									  <tr>
+										<td>2</td>
+										<td>64x64x64</td>
+										<td>5175.7</td>
+										<td>5.1757</td>
+									  </tr>
+									  <tr>
+										<td>2</td>
+										<td>128x128x128</td>
+										<td>40813.4</td>
+										<td>40.8134</td>
+									  </tr>
+									</tbody>
+								</table>
+								<h4>Data cube combination - Number of Cubes</h4>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-6">
+											<p>
+												When combining multiple data cubes of the same size 
+												the time each additional cube adds plots the beginning of an exponential relationship.
+												This is an undesirable result considering the goal of minimising the waiting time for the user.
+												Therefore, within the implementation the total number of cubes the algorithm will have to combine on 
+												the client is two.
+												Combing two cubes of 64 by 64 by 64 dimensions requires on average 5 seconds and adding the rendering time
+												it would produce a visualisation of the data within 6 seconds upon receiving the final data cube.
+												This waiting time will only effect the user when initially loading the data and when cropping the cube where
+												cubes are transfer from the server to the client.
+											</p>
+										</div>
+										<div class="col-6"><span class="image fit"><figure><img src="images/client-results/cube-combo-number.png"/><figcaption>The relationship between of the number of cubes being combined on the client and the time required to combine them.</figcaption></figure></span></div>
+									</div>
+								</div>
+								<table>
+									<thead>
+									  <tr>
+										<th>Number of cubes</th>
+										<th>Dimensions of cubes</th>
+										<th>Average Time (ms)</th>
+										<th>Average time (s)</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr>
+										<td>2</td>
+										<td>64x64x64</td>
+										<td>5175.7</td>
+										<td>5.1757</td>
+									  </tr>
+									  <tr>
+										<td>3</td>
+										<td>64x64x64</td>
+										<td>9733.9</td>
+										<td>9.7339</td>
+									  </tr>
+									  <tr>
+										<td>4</td>
+										<td>64x64x64</td>
+										<td>23895.2</td>
+										<td>23.8952</td>
+									  </tr>
+									</tbody>
+								</table>
 							</section>
 
 					</div>
