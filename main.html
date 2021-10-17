@@ -19,7 +19,9 @@
 
         <!-- Header -->
         <header id="header">
-            <h1 id="logo"><a href="main.html">3DAVis</a></h1>
+            <h1 id="logo">
+                <a href="main.html"></a>
+            </h1>
             <nav id="nav">
                 <ul>
                     <li><a href="main.html">Home</a></li>
@@ -34,204 +36,162 @@
 
         <!-- Banner -->
         <section id="banner">
-            <div class="content">
+            <div class="content" style="text-align: center;">
+                <img src="images/logowhite.png" alt="" />
                 <header>
                     <h2>Three-dimensional Data Visualisation</h2>
-                    <p>A system for rendering astronomical data into a three-dimensional<br /> visualisation,
-                    using a client-server hybrid rendering approach.<br /> 
-                    Serving as a proof of concept for future 3D astronomical data visualization tools.</p>
+                    <p>A system for rendering astronomical data into a three-dimensional visualisation, using a client-server hybrid rendering approach. Serving as a proof of concept for future 3D astronomical data visualization tools.</p>
                 </header>
-                <span class="image"><img src="images/galaxy-square.png" alt="" /></span>
+                
             </div>
             <a href="#one" class="goto-next scrolly">Next</a>
         </section>
 
         <!-- One -->
         <section id="one" class="spotlight style1 right">
-            <span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+            <span class="image fit main"><img src="images/meerkat.jpg" alt="" /></span>
             <div class="content">
                 <header>
-                    <h2>Goals</h2>
-                    <!-- <p>Nascetur eu nibh vestibulum amet gravida nascetur praesent</p> -->
+                    <h2>Background</h2>
                 </header>
-            
                 <p>
-                    The goal for this research project was to construct a proof 
-                    of concept system that implements a strategy for allowing 
-                    any average computer to produce visualisations of very 
-                    large data cubes in a lag-free manner.
-                    The questions mainly related to the usability of the 
-                    new system, the libraries used for compression and 
-                    rendering as well as the scalability of using large 
-                    data sets.
+                    Astronomical data presents certain challenges that affect the approaches taken when developing a visualisation system. Possibly the greatest challenge is how to effectively handle the size of the data that
+                    is produced by astronomy recording instruments as high-resolution data contains millions of data points which are worth gigabytes of information. Data processing and
+                    visualisation would be done by a remote server which would give a wider range of people access to the data regardless of the computational power of their local computers. It also reduces the need to transfer the
+                    data between client computers and would aid astronomers towards more effective data exploration and analysis.
                 </p>
-                <ol>
-                    <li>research question 1</li>
-                    <li>research question 2</li>
-                </ol>
             </div>
+
             <a href="#two" class="goto-next scrolly">Next</a>
         </section>
 
         <!-- Two -->
         <section id="two" class="spotlight style2 bottom">
-            <span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+            <span class="image fit main"><img src="images/earth.gif" alt="" /></span>
             <div class="content">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-12-medium">
                             <header>
-                                <h2>Background</h2>
+                                <h2>Goals</h2>
                                 <!-- <p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p> -->
                             </header>
-                        <div class="col-3 col-12-medium">
                             <p>
-                                Astronomical data presents certain challenges that affect the approaches we take
-                                when developing a system that can visualise this kind of data. 
-                                Firstly, there is not a single dominant format which means attempting to make a generic system would be 
-                                difficult, a single format must be selected to base the system on. 
-                                There is also the aspect that astronomical data has a low signal to noise ratio as well as a 
-                                high dynamic range. 
-                                It becomes difficult to separate the data from the noise and to normalise the data to within a range 
-                                that can be visualised. 
-                                Astronomical data uses dimensions in a different way to typical two and three dimensional spatial 
-                                datasets, and maps different data types to axes and
-                                correctly mapping these axes is imperative to accurate visualisation. 
-                                Possibly the greatest challenge and the challenge we will be mainly addressing is how to effectively handle
-                                the size of the data that is produced by astronomy recording instruments. 
-                                High resolution data often contains millions of data points and could easily take up the entire storage 
-                                space of several hundred home computers. 
+                                The goal for this research project was to construct a proof of concept system that implements a strategy for allowing any average computer to produce visualisations of very large data cubes in a lag-free manner. We formulated a series of research questions which we intend to answering through the completion of this project. These questions mainly related to the usability of the new system, the libraries used for compression and rendering as well as the scalability of using large data sets.
                             </p>
-                        </div>
-                        <div class="col-12 col-12-medium"></div>
-                            <p>
-                                There is a need within the astronomy community for a system that can reliably 
-                                produce and accurately portray data while accommodating the complexities associated 
-                                with processing and rendering astronomical data. 
-
-                                The main portion of data processing and visualisation would be done by a 
-                                remote server system which would give a wider range of people access to the data 
-                                regardless of the computational power of their local computers. 
-                                It also reduces the need to transfer the data between client
-                                computers and would remove obstacles from the scientists path in being 
-                                able to explore data and study it effectively. 
-                            </p>
-                        </div>
-                        <div class="col-12 col-12-medium"></div>
-                            <p>
-                                The motivation behind implementing 3DAVis is to address certain challenges around visualising and interaction with 
-                                astronomical data cubes in real time,
-                                these challenges derive from certain characteristics of astronomical data.
-                                The extremely large size of the astronomical data cubes which makes it incredibly difficult
-                                to render them in a timely manner even when making use of a dedicated powerful computer.
-                                This also limits how astronomers can work with the data,
-                                they are limited to using these dedicated computers or attempting to use their own computer which can not 
-                                render the entire data cube.
-                            </p>
+                                                      
                         </div>
                     </div>
                 </div>
                 <a href="#three" class="goto-next scrolly">Next</a>
             </div>
-           
-        </section>
+    <a href="#three" class="goto-next scrolly">Next</a>
+    </section>
 
-        <!-- Three -->
-        <section id="three" class="spotlight style3 left">
-            <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
-            <div class="content">
-                <header>
-                    <h2>Interdum felis blandit praesent sed augue</h2>
-                    <p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
-                </header>
-                <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
-                <ul class="actions">
-                    <li><a href="#" class="button">Learn More</a></li>
-                </ul>
-            </div>
-            <a href="#four" class="goto-next scrolly">Next</a>
-        </section>
+    <!-- Three -->
+    <section id="three" class="spotlight style3 top">
+        <span class="image fit main bottom"><img src="images/earth.gif" alt="" /></span>
+        <div class="content">
+            <header>
+                <h2>Research Questions</h2>
+                <ol>
+                    <li>How can the data be pre-processed using methods such as
+                        mipmapping on the server-side of the system to increase the
+                        speed of data processing and transfer?</li>
+                    <li>Does ZFP compression library significantly compress the data to achieve better transfer speed over a network from server to client?</li>
+                    <li>Does VTK graphical rendering library produce the best results in terms of speed and rendering?</li>
+                    <li>How can the client and server approaches be combined to
+                        facilitate high-resolution data rendering over a network while
+                        maintaining usability? </li>
+                    <li>How does the hybrid model approach scale in terms of rendering
+                        time, transfer latency, and time from user interaction
+                        and feedback over increasingly larger data sets?</li>
+                </ol>
+            </header>
+        </div>
+        <a href="#four" class="goto-next scrolly">Next</a>
+    </section>
 
-        <!-- Four -->
-        <section id="four" class="wrapper style1 special fade-up">
-            <div class="container">
-                <header class="major">
-                    <h2>Accumsan sed tempus adipiscing blandit</h2>
-                    <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
-                </header>
-                <div class="box alt">
-                    <div class="row gtr-uniform">
-                        <section class="col-4 col-6-medium col-12-xsmall">
-                            <span class="icon solid alt major fa-chart-area"></span>
-                            <h3>Ipsum sed commodo</h3>
-                            <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                        </section>
-                        <section class="col-4 col-6-medium col-12-xsmall">
-                            <span class="icon solid alt major fa-comment"></span>
-                            <h3>Eleifend lorem ornare</h3>
-                            <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                        </section>
-                        <section class="col-4 col-6-medium col-12-xsmall">
-                            <span class="icon solid alt major fa-flask"></span>
-                            <h3>Cubilia cep lobortis</h3>
-                            <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                        </section>
-                        <section class="col-4 col-6-medium col-12-xsmall">
-                            <span class="icon solid alt major fa-paper-plane"></span>
-                            <h3>Non semper interdum</h3>
-                            <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                        </section>
-                        <section class="col-4 col-6-medium col-12-xsmall">
-                            <span class="icon solid alt major fa-file"></span>
-                            <h3>Odio laoreet accumsan</h3>
-                            <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                        </section>
-                        <section class="col-4 col-6-medium col-12-xsmall">
-                            <span class="icon solid alt major fa-lock"></span>
-                            <h3>Massa arcu accumsan</h3>
-                            <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                        </section>
-                    </div>
+    <!-- Four -->
+    <section id="four" class="wrapper style1 special fade-up">
+        <div class="container">
+            <header class="major">
+                <h2>Results</h2>
+                <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+            </header>
+            <div class="box alt">
+                <div class="row gtr-uniform">
+                    <section class="col-4 col-6-medium col-12-xsmall">
+                        <span class="icon solid alt major fa-chart-area"></span>
+                        <h3>Ipsum sed commodo</h3>
+                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    </section>
+                    <section class="col-4 col-6-medium col-12-xsmall">
+                        <span class="icon solid alt major fa-comment"></span>
+                        <h3>Eleifend lorem ornare</h3>
+                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    </section>
+                    <section class="col-4 col-6-medium col-12-xsmall">
+                        <span class="icon solid alt major fa-flask"></span>
+                        <h3>Cubilia cep lobortis</h3>
+                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    </section>
+                    <section class="col-4 col-6-medium col-12-xsmall">
+                        <span class="icon solid alt major fa-paper-plane"></span>
+                        <h3>Non semper interdum</h3>
+                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    </section>
+                    <section class="col-4 col-6-medium col-12-xsmall">
+                        <span class="icon solid alt major fa-file"></span>
+                        <h3>Odio laoreet accumsan</h3>
+                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    </section>
+                    <section class="col-4 col-6-medium col-12-xsmall">
+                        <span class="icon solid alt major fa-lock"></span>
+                        <h3>Massa arcu accumsan</h3>
+                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    </section>
                 </div>
-                <footer class="major">
-                    <ul class="actions special">
-                        <li><a href="#" class="button">Magna sed feugiat</a></li>
-                    </ul>
-                </footer>
             </div>
-        </section>
+            <footer class="major">
+                <ul class="actions special">
+                    <li><a href="#" class="button">Magna sed feugiat</a></li>
+                </ul>
+            </footer>
+        </div>
+    </section>
 
-        <!-- Five -->
-        <section id="five" class="wrapper style2 special fade">
-            <div class="container">
-                <header>
-                    <h2>Magna faucibus lorem diam</h2>
-                    <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
-                </header>
-                <form method="post" action="#" class="cta">
-                    <div class="row gtr-uniform gtr-50">
-                        <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-                        <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
-                    </div>
-                </form>
-            </div>
-        </section>
+    <!-- Five -->
+    <section id="five" class="wrapper style2 special fade">
+        <div class="container">
+            <header>
+                <h2>Magna faucibus lorem diam</h2>
+                <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+            </header>
+            <form method="post" action="#" class="cta">
+                <div class="row gtr-uniform gtr-50">
+                    <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+                    <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
+                </div>
+            </form>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <ul class="icons">
-                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </footer>
 
     </div>
 
